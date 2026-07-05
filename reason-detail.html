@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Reason</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light;
+        --burgundy: #5d1426;
+        --rose-gold: #c68f7f;
+        --ivory: #f9efe6;
+        --text: #2f1b12;
+        --muted: #6f4c3c;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        font-family: 'Cormorant Garamond', serif;
+        background: linear-gradient(135deg, #2a0d12 0%, #5d1426 45%, #ac6e5d 100%);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(92vw, 900px);
+        max-height: min(92vh, 940px);
+        background: rgba(255,248,239,0.9);
+        border: 1px solid rgba(255,255,255,0.28);
+        border-radius: 32px;
+        box-shadow: 0 22px 60px rgba(0,0,0,0.24);
+        overflow: hidden;
+      }
+      .hero {
+        padding: 24px;
+        background: linear-gradient(135deg, rgba(93,20,38,0.95), rgba(199,143,127,0.85));
+        color: #fffaf4;
+      }
+      .hero h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        margin-bottom: 0.6rem;
+      }
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.7;
+        opacity: 0.95;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+        padding: 24px;
+        max-height: calc(min(92vh, 940px) - 180px);
+        overflow: hidden;
+      }
+      .photo-box {
+        border-radius: 24px;
+        min-height: 280px;
+        background: linear-gradient(135deg, rgba(245, 221, 210, 0.7), rgba(255,255,255,0.6));
+        border: 1px dashed rgba(93,20,38,0.25);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 20px;
+        color: var(--burgundy);
+      }
+      .photo-box strong { font-size: 1.15rem; margin-bottom: 0.4rem; display: block; }
+      .text-box {
+        padding: 8px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+        padding-right: 0.35rem;
+      }
+      .text-box p {
+        font-size: 1.08rem;
+        line-height: 1.85;
+        color: var(--muted);
+        margin-bottom: 0;
+      }
+      .action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .back-btn,
+      .next-btn {
+        display: inline-block;
+        padding: 0.8rem 1.2rem;
+        background: linear-gradient(135deg, var(--rose-gold), var(--burgundy));
+        color: white;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .next-btn {
+        background: linear-gradient(135deg, #b8637c, #7b2f3f);
+      }
+      @media (max-width: 760px) {
+        .content { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="hero">
+        <h1 id="title">Our Love Story</h1>
+        <p id="subtitle">A tender memory from the heart of our journey together.</p>
+      </div>
+      <div class="content">
+        <div class="photo-box">
+          <div class="photo-box">
+  <img id="reasonImage" src="photos/pic 10.jpg" alt="Our Memory">
+</div>
+        </div>
+        <div class="text-box">
+          <p id="description"></p>
+          <div class="action-row">
+            <a class="back-btn" id="backBtn" href="index.html">← Back to story</a>
+            <a class="next-btn" id="nextBtn" href="#">Next 💞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const reason = params.get('reason');
+      const reasons = ['sanna-sanna', 'doora-idru', 'jagalagalu', 'kaayuvudara', 'ninna-nenapalle', 'nambike', 'thaalme', 'prathi-kashta'];
+      const content = {
+        'sanna-sanna': {
+          title: '🌧️ Sanna Sanna Manasina Bhinnabhiprayagalu',
+          subtitle: 'Even small differences could not weaken what we shared.',
+          description: 'Kelavomme maathugaliginta mouna jaasti maatadittu... aadre namma preethi yavaglu geddittu. 🤍 This moment reminds us that silence, misunderstanding, and gentle pauses were never strong enough to break our bond. Instead, they only made our love more resilient and deeper.'
+        },
+        'doora-idru': {
+          title: '🌍 Doora Idru Hrudayagalu Onde Aagidvu',
+          subtitle: 'Distance was only a road, not a wall.',
+          description: 'Madhye eshte doora idru, ninna nenapu yavaglu nanna hattira ittu. 🫶🏻 Even when miles stood between us, your memory stayed close, warm, and alive in my heart. Love proved that closeness is not measured by distance alone.'
+        },
+        'jagalagalu': {
+          title: '💔 Jagalagalu Kooda Preethiya Ondu Bhaaga',
+          subtitle: 'Our arguments taught us how precious peace is.',
+          description: 'Kelavu sala kopa bandru, konege "neeve nanna prapanch" anno bhaavane ella jagalagalanna mareysittu. ❤️ Sometimes we fought, but in the end, the truth of our love always softened the hurt. It reminded us that love is not only about happy moments, but also about choosing each other again.'
+        },
+        'kaayuvudara': {
+          title: '⏳ Kaayuvudara Sundara Novu',
+          subtitle: 'Small gestures became the sweetest proof of love.',
+          description: 'Ninna ondu message, ondu call, athava ondu bheti ge kaadidha prathi kshana... adu preethiya nijavaada bele kalisthu. 💌 Every little message, call, or meeting became a tiny celebration of affection. Those ordinary moments carried extraordinary meaning.'
+        },
+        'ninna-nenapalle': {
+          title: '🥺 Ninna Nenapalle Badukida Dinagalu',
+          subtitle: 'Even the days without you felt tender and full of longing.',
+          description: 'Ninna nodade kaleda prathi dina, ninna mele iruva preethi innu jaasti aagta hoythu. 🌹 Each day without seeing you made your love feel even stronger. The longing turned into proof that your presence had become a beautiful part of my life.'
+        },
+        'nambike': {
+          title: '🤝 Nambike... Namma Dodda Shakti',
+          subtitle: 'Trust became the foundation that held us steady.',
+          description: 'Paristhithigalu badaladru, janaru enu helidru... ninna mele iruva nambike yavaglu badalagilla. ✨ No matter how life changed, our trust remained unshaken. It became the quiet strength that carried us through every uncertainty.'
+        },
+        'thaalme': {
+          title: '🌸 Thaalme... Namma Preethiya Soundarya',
+          subtitle: 'We grew through patience, understanding, and grace.',
+          description: 'Aatura maadade, obbaranna obbaru artha maadkondhu, kai bidade munde nadevu. 💞 We moved forward without rushing, understanding one another with kindness and holding each other with care. Love became more beautiful because we chose to grow together gently.'
+        },
+        'prathi-kashta': {
+          title: '♾️ Prathi Kashta... Namma Bandhavanna Innu Balavaagisthu',
+          subtitle: 'Every challenge made our bond stronger and more lasting.',
+          description: 'Baduku kotta prathi pareekshe nammannu doora maadalilla... badalagi, innu hattira tandu, "Forever" anno nambikeyanna innu gattiyaagisthu. ❤️🌹 Each hard moment brought us closer instead of pushing us apart. It made our promise of forever feel more real, more alive, and more beautiful.'
+        }
+      };
+      const entry = content[reason] || content['sanna-sanna'];
+      const currentIndex = reasons.indexOf(reason) >= 0 ? reasons.indexOf(reason) : 0;
+      const nextReason = reasons[(currentIndex + 1) % reasons.length];
+
+      document.getElementById('title').textContent = entry.title;
+      document.getElementById('subtitle').textContent = entry.subtitle;
+      document.getElementById('description').textContent = entry.description;
+      document.getElementById('nextBtn').addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = `reason-detail.html?reason=${nextReason}`;
+      });
+
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const savedSlide = sessionStorage.getItem('returnSlide');
+        const target = savedSlide ? `index.html#slide-${savedSlide}` : 'index.html';
+        window.location.href = target;
+      });
+    </script>
+  </body>
+</html>

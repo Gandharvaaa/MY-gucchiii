@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Bestuuu</title>
+    <meta name="description" content="A premium vintage romantic birthday website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-paper">
+        <div class="loading-heart">♡</div>
+        <h1>Here You Go Bestuuuuu...</h1>
+        <p>Opening the pages of a love written from the heart. </p>
+      </div>
+    </div>
+
+    <!-- Custom cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- App shell -->
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">Our Story</div>
+        <div class="control-group">
+          <button class="icon-btn" id="musicToggle" aria-label="Toggle music">🔊</button>
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀️</button>
+        </div>
+      </header>
+
+      <div class="progress-indicator" id="progressIndicator" aria-label="Story progress"></div>
+
+      <button class="nav-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+      <button class="nav-btn next" id="nextBtn" aria-label="Next slide">›</button>
+
+      <div class="slides" id="slides">
+        <!-- Slide 1: Cover -->
+        <section class="slide cover-slide active" data-slide="0">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <p class="eyebrow">At The Starting Days Of Collage Time...</p>
+            <h1>Everything Changed When I Met You BESTUUUUU</h1>
+            <p class="lead">A love story painted in roses, candlelight, and timeless devotion.</p>
+            <p class="name-spotlight">Gucchii</p>
+            <button class="primary-btn" id="startStoryBtn">Begin Our Story ❤️</button>
+          </div>
+        </section>
+
+        <!-- Slide 2: Proposal -->
+        <section class="slide proposal-slide" data-slide="1">
+          <div class="slide-content glass-card">
+            <p class="eyebrow">The Day I Fell In Love</p>
+            <h2 id="proposalHeading">The Day I Fell In Love</h2>
+            <div class="typing-text" id="proposalText"></div>
+            <p class="closing-line">Will you continue this beautiful journey with me forever?</p>
+            <p class="name-spotlight subtle">Bestuuu</p>
+          </div>
+        </section>
+
+        <!-- Slide 3: Beginning -->
+        <section class="slide beginning-slide" data-slide="2">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Our Beginning</p>
+            <h2>How Our Story Began</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="timeline-dot">♡</span>
+                <div>
+                  <h3>A Gentle Beginning</h3>
+                  <p>It started with a simple conversation that felt like a melody carried by the wind.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">♡</span>
+                <div>
+                  <h3>Little Moments</h3>
+                  <p>Every shared laugh, every lingering glance, and every late-night talk slowly stitched our hearts together.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">♡</span>
+                <div>
+                  <h3>Forever Felt Near</h3>
+                  <p>What began as curiosity blossomed into a bond so tender it felt meant to be.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: Ups and Downs -->
+        <section class="slide challenge-slide" data-slide="3">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Our Ups and Downs</p>
+            <h2>Every Storm Strengthened Us</h2>
+            <div class="challenge-grid">
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=sanna-sanna">
+                <strong>🌧️ Sanna Sanna Manasina Bhinnabhiprayagalu</strong>
+                <span>Kelavomme maathugaliginta mouna jaasti maatadittu... aadre namma preethi yavaglu geddittu. 🤍</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=doora-idru">
+                <strong>🌍 Doora Idru Hrudayagalu Onde Aagidvu</strong>
+                <span>Madhye eshte doora idru, ninna nenapu yavaglu nanna hattira ittu. 🫶🏻</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=jagalagalu">
+                <strong>💔 Jagalagalu Kooda Preethiya Ondu Bhaaga</strong>
+                <span>Kelavu sala kopa bandru, konege "neeve nanna prapanch" anno bhaavane ella jagalagalanna mareysittu. ❤️</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=kaayuvudara">
+                <strong>⏳ Kaayuvudara Sundara Novu</strong>
+                <span>Ninna ondu message, ondu call, athava ondu bheti ge kaadidha prathi kshana... adu preethiya nijavaada bele kalisthu. 💌</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=ninna-nenapalle">
+                <strong>🥺 Ninna Nenapalle Badukida Dinagalu</strong>
+                <span>Ninna nodade kaleda prathi dina, ninna mele iruva preethi innu jaasti aagta hoythu. 🌹</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=nambike">
+                <strong>🤝 Nambike... Namma Dodda Shakti</strong>
+                <span>Paristhithigalu badaladru, janaru enu helidru... ninna mele iruva nambike yavaglu badalagilla. ✨</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=thaalme">
+                <strong>🌸 Thaalme... Namma Preethiya Soundarya</strong>
+                <span>Aatura maadade, obbaranna obbaru artha maadkondhu, kai bidade munde nadevu. 💞</span>
+              </a>
+              <a class="challenge-card reason-card" href="reason-detail.html?reason=prathi-kashta">
+                <strong>♾️ Prathi Kashta... Namma Bandhavanna Innu Balavaagisthu</strong>
+                <span>Baduku kotta prathi pareekshe nammannu doora maadalilla... badalagi, innu hattira tandu, "Forever" anno nambikeyanna innu gattiyaagisthu. ❤️🌹</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Three years -->
+        <section class="slide years-slide" data-slide="4">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Three Beautiful Years Together</p>
+            <h2>Every Chapter Was A Memory Worth Keeping</h2>
+            <p class="memory-intro">Every smile, every call, every memory, every laugh, every late-night conversation, every hug, and every dream.</p>
+            <div class="memory-grid">
+              <div class="memory-card">
+                <img src="assets/images/memory-1.png" alt="Vintage memory card" />
+                <span>Our First Laugh</span>
+              </div>
+              <div class="memory-card">
+                <img src="assets/images/memory-2.png" alt="Vintage memory card" />
+                <span>Our First Promise</span>
+              </div>
+              <div class="memory-card">
+                <img src="assets/images/memory-3.png" alt="Vintage memory card" />
+                <span>Our Golden Days</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Promise -->
+        <section class="slide promise-slide" data-slide="5">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Forever Promise</p>
+            <h2>I Promise You Bestuuu</h2>
+            <div class="promise-grid">
+              <div class="promise-card">Always choosing you</div>
+              <div class="promise-card">Supporting your dreams</div>
+              <div class="promise-card">Holding your hand</div>
+              <div class="promise-card">Protecting your heart</div>
+              <div class="promise-card">Growing old together</div>
+              <div class="promise-card">Never giving up</div>
+            </div>
+            <p class="promise-signoff">You are my today, my tomorrow, and my forever.</p>
+            <p class="name-spotlight tiny">Kothi marii</p>
+          </div>
+        </section>
+
+        <!-- Slide 7: Quotes -->
+        <section class="slide quotes-slide" data-slide="6">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Love Quotes kaneee</p>
+            <h2>Words Written By The Heart</h2>
+            <div class="quote-grid">
+              <div class="quote-card">“You are my favorite place.”</div>
+              <div class="quote-card">“I found home in your heart.”</div>
+              <div class="quote-card">“I never knew forever until I met you.”</div>
+              <div class="quote-card">“You are the poem my heart writes every day.”</div>
+              <div class="quote-card">“I still fall in love with you, every single day.”</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Kannada lines -->
+        <section class="slide kannada-slide" data-slide="7">
+          <div class="slide-content glass-card wide manuscript">
+            <p class="eyebrow">Love Lines Gucchiii</p>
+            <h2>Sanna Maatugalu... Dodda Bhaavanegalu. ✨</h2>
+            <div class="kannada-lines">
+              <p>“ನಿನ್ನ ಹೃದಯದ ಬೆಚ್ಚಗಿನ ಬೆಳಕಿನಲ್ಲಿ ನನ್ನ ಜೀವನವೂ ಹೂವಿನಂತೆ ಅರಳಿ ನಿಂತಿದೆ.”</p>
+              <p>“ನಿನ್ನ ನಗು ನನ್ನನ್ನು ಮತ್ತೆ ಮತ್ತೆ ಮರುಜನಿಸಿಸುತ್ತದೆ.”</p>
+              <p>“ಮಗುವಿನಂತೆ ನಿನ್ನ ನೋಟವು ನನ್ನ ಮನಸ್ಸಿಗೆ ನೆಮ್ಮದಿಯ ಸಂಗೀತ.”</p>
+              <p>“ನಿಮ್ಮ ಸುತ್ತಲೂ ನನ್ನ ಪ್ರಪಂಚವೇ ಒಂದು ಕನಸಿನಂತೆ ಮೃದುವಾಗುತ್ತದೆ.”</p>
+            </div>
+            <div class="kuvempu avr-lines">
+              <p>Nin asse pado Kuvempu avr preethi salugaluuu...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Gallery -->
+        <section class="slide gallery-slide" data-slide="8">
+          <div class="slide-content glass-card wide">
+            <p class="eyebrow">Memory Gallery</p>
+            <h2>Frames of Our Timeless Love</h2>
+            <div class="gallery-grid">
+              <div class="gallery-card">
+                <img src="assets/images/gallery-1.png" alt="Vintage gallery frame" />
+                <p>First Season</p>
+              </div>
+              <div class="gallery-card">
+                <img src="assets/images/gallery-2.png" alt="Vintage gallery frame" />
+                <p>Golden Evening</p>
+              </div>
+              <div class="gallery-card">
+                <img src="assets/images/gallery-3.png" alt="Vintage gallery frame" />
+                <p>Forever Smile</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Birthday finale -->
+        <section class="slide finale-slide" data-slide="9">
+          <div class="slide-content glass-card wide finale-card">
+            <p class="eyebrow">Birthday Surprise</p>
+            <h2 id="birthdayTitle">✨ Happy Birthday My Love ❤️ ✨</h2>
+            <div class="typewriter" id="birthdayMessage"></div>
+            <p class="final-signoff">Happy Birthday, My Forever Person ❤️</p>
+            <button class="primary-btn" id="heartBurstBtn">Forever & Always</button>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">Made with Endless Love ❤️</footer>
+    </div>
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="assets/music/soft-piano.wav" type="audio/wav" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
