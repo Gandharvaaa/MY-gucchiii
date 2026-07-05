@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Reason</title>
+    <title>Happy Birthday Gucchii ❤️🎂</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -13,10 +13,20 @@
         --burgundy: #5d1426;
         --rose-gold: #c68f7f;
         --ivory: #f9efe6;
+        --cream: #f3e8d9;
+        --soft-pink: #f6d8e0;
+        --gold: #b88a2a;
         --text: #2f1b12;
         --muted: #6f4c3c;
+        --dark-brown: #2e1a15;
       }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         min-height: 100vh;
         font-family: 'Cormorant Garamond', serif;
@@ -25,85 +35,366 @@
         display: grid;
         place-items: center;
         padding: 24px;
+        position: relative;
+        overflow-x: hidden;
       }
+
+      /* Floating hearts background */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: 
+          radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(198, 143, 127, 0.08) 0%, transparent 50%);
+        z-index: 1;
+      }
+
+      /* Sparkle animation keyframes */
+      @keyframes sparkle {
+        0% { transform: scale(0) rotate(0deg); opacity: 1; }
+        100% { transform: scale(1.5) rotate(180deg); opacity: 0; }
+      }
+
+      @keyframes floatingHeart {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(30px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Floating hearts */
+      .heart-particle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10;
+        font-size: 1.5rem;
+        animation: floatingHeart 4s ease-out forwards;
+      }
+
+      /* Sparkle particles */
+      .sparkle-particle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 10;
+        width: 6px;
+        height: 6px;
+        background: #b88a2a;
+        border-radius: 50%;
+        animation: sparkle 1.5s ease-out forwards;
+        box-shadow: 0 0 8px #b88a2a;
+      }
+
       .card {
-        width: min(92vw, 900px);
+        width: min(92vw, 1000px);
         max-height: min(92vh, 940px);
-        background: rgba(255,248,239,0.9);
-        border: 1px solid rgba(255,255,255,0.28);
-        border-radius: 32px;
-        box-shadow: 0 22px 60px rgba(0,0,0,0.24);
+        background: rgba(255, 248, 239, 0.95);
+        border: 2px solid rgba(198, 143, 127, 0.4);
+        border-radius: 40px;
+        box-shadow: 
+          0 30px 80px rgba(0, 0, 0, 0.3),
+          0 0 60px rgba(198, 143, 127, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 20;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 255, 255, 0.4) 0%,
+          transparent 40%
+        );
+        pointer-events: none;
+        border-radius: 40px;
+      }
+
+      .hero {
+        padding: 32px 40px;
+        background: linear-gradient(135deg, rgba(93, 20, 38, 0.98), rgba(199, 143, 127, 0.92));
+        color: #fffaf4;
+        text-align: center;
+        position: relative;
         overflow: hidden;
       }
-      .hero {
-        padding: 24px;
-        background: linear-gradient(135deg, rgba(93,20,38,0.95), rgba(199,143,127,0.85));
-        color: #fffaf4;
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(255, 255, 255, 0.15) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
       }
+
       .hero h1 {
         font-family: 'Great Vibes', cursive;
-        font-size: clamp(1.9rem, 4vw, 2.6rem);
-        margin-bottom: 0.6rem;
+        font-size: clamp(2.2rem, 5vw, 2.8rem);
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.05em;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       }
+
       .hero p {
-        font-size: 1rem;
-        line-height: 1.7;
-        opacity: 0.95;
+        font-size: clamp(0.95rem, 2vw, 1.08rem);
+        line-height: 1.8;
+        opacity: 0.98;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
       }
+
       .content {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 24px;
-        padding: 24px;
-        max-height: calc(min(92vh, 940px) - 180px);
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 32px;
+        padding: 40px;
+        max-height: calc(min(92vh, 940px) - 160px);
         overflow: hidden;
+        align-items: center;
       }
+
       .photo-box {
-        border-radius: 24px;
-        min-height: 280px;
-        background: linear-gradient(135deg, rgba(245, 221, 210, 0.7), rgba(255,255,255,0.6));
-        border: 1px dashed rgba(93,20,38,0.25);
+        border-radius: 28px;
+        min-height: 320px;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(245, 221, 210, 0.8), rgba(255, 248, 239, 0.9));
+        border: 2px solid rgba(198, 143, 127, 0.3);
         display: grid;
         place-items: center;
         text-align: center;
-        padding: 20px;
+        padding: 24px;
         color: var(--burgundy);
+        position: relative;
+        box-shadow: 
+          0 20px 50px rgba(93, 20, 38, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        overflow: hidden;
+        animation: photoLoad 0.8s ease-out 0.2s both;
       }
-      .photo-box strong { font-size: 1.15rem; margin-bottom: 0.4rem; display: block; }
+
+      @keyframes photoLoad {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .photo-box::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 255, 255, 0.5) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 15px 40px rgba(93, 20, 38, 0.2);
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .photo-box img:hover {
+        transform: scale(1.05);
+      }
+
+      .photo-box strong {
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+
       .text-box {
-        padding: 8px 0;
+        padding: 12px 0;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.6rem;
         overflow-y: auto;
-        padding-right: 0.35rem;
+        max-height: 100%;
+        padding-right: 0.5rem;
+        animation: textLoad 0.8s ease-out 0.3s both;
       }
+
+      @keyframes textLoad {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
       .text-box p {
-        font-size: 1.08rem;
-        line-height: 1.85;
+        font-size: clamp(1rem, 1.5vw, 1.12rem);
+        line-height: 1.9;
         color: var(--muted);
         margin-bottom: 0;
+        font-weight: 400;
+        letter-spacing: 0.02em;
       }
+
+      .text-box::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .text-box::-webkit-scrollbar-track {
+        background: rgba(198, 143, 127, 0.1);
+        border-radius: 10px;
+      }
+
+      .text-box::-webkit-scrollbar-thumb {
+        background: rgba(198, 143, 127, 0.4);
+        border-radius: 10px;
+        transition: background 0.3s ease;
+      }
+
+      .text-box::-webkit-scrollbar-thumb:hover {
+        background: rgba(198, 143, 127, 0.6);
+      }
+
       .action-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 1rem;
+        margin-top: 0.8rem;
       }
+
       .back-btn,
       .next-btn {
         display: inline-block;
-        padding: 0.8rem 1.2rem;
+        padding: 0.95rem 1.6rem;
         background: linear-gradient(135deg, var(--rose-gold), var(--burgundy));
         color: white;
         border-radius: 999px;
         text-decoration: none;
         font-weight: 600;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.02rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 25px rgba(93, 20, 38, 0.2);
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+        letter-spacing: 0.02em;
       }
+
+      .back-btn:hover,
+      .next-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(93, 20, 38, 0.3);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
       .next-btn {
-        background: linear-gradient(135deg, #b8637c, #7b2f3f);
+        background: linear-gradient(135deg, #d4849c, #9b3a52);
       }
-      @media (max-width: 760px) {
-        .content { grid-template-columns: 1fr; }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .content {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          padding: 28px;
+          overflow-y: auto;
+          max-height: auto;
+        }
+
+        .photo-box {
+          min-height: 280px;
+          max-height: 350px;
+        }
+
+        .text-box {
+          gap: 1.2rem;
+        }
+
+        .hero {
+          padding: 24px 28px;
+        }
+
+        .card {
+          max-height: none;
+          max-width: 95vw;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 20px 16px;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+
+        .content {
+          gap: 16px;
+          padding: 16px;
+        }
+
+        .photo-box {
+          min-height: 240px;
+          padding: 16px;
+          border-radius: 20px;
+        }
+
+        .text-box {
+          gap: 1rem;
+        }
+
+        .text-box p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+        }
+
+        .action-row {
+          gap: 0.8rem;
+          flex-direction: column;
+        }
+
+        .back-btn,
+        .next-btn {
+          width: 100%;
+          text-align: center;
+          padding: 0.85rem 1.2rem;
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
@@ -115,14 +406,12 @@
       </div>
       <div class="content">
         <div class="photo-box">
-          <div class="photo-box">
-  <img id="reasonImage" src="photos/pic 10.jpg" alt="Our Memory">
-</div>
+          <img id="reasonImage" src="photos/sanna-sanna.jpg" alt="Our Memory">
         </div>
         <div class="text-box">
           <p id="description"></p>
           <div class="action-row">
-            <a class="back-btn" id="backBtn" href="index.html">← Back to story</a>
+            <a class="back-btn" id="backBtn" href="index.html">← Back to Story</a>
             <a class="next-btn" id="nextBtn" href="#">Next 💞</a>
           </div>
         </div>
@@ -130,6 +419,44 @@
     </div>
 
     <script>
+      // Floating hearts animation
+      function createFloatingHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart-particle';
+        heart.textContent = '❤️';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.top = window.innerHeight + 'px';
+        heart.style.opacity = Math.random() * 0.5 + 0.3;
+        document.body.appendChild(heart);
+        
+        setTimeout(() => heart.remove(), 4000);
+      }
+
+      // Sparkle animation
+      function createSparkle(x, y) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle-particle';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 1500);
+      }
+
+      // Create floating hearts periodically
+      setInterval(createFloatingHeart, 1200);
+
+      // Create sparkles on mouse movement
+      let lastSparkleTime = 0;
+      document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastSparkleTime > 100) {
+          createSparkle(e.clientX, e.clientY);
+          lastSparkleTime = now;
+        }
+      });
+
+      // Original functionality
       const params = new URLSearchParams(window.location.search);
       const reason = params.get('reason');
       const reasons = ['sanna-sanna', 'doora-idru', 'jagalagalu', 'kaayuvudara', 'ninna-nenapalle', 'nambike', 'thaalme', 'prathi-kashta'];
@@ -137,44 +464,53 @@
         'sanna-sanna': {
           title: '🌧️ Sanna Sanna Manasina Bhinnabhiprayagalu',
           subtitle: 'Even small differences could not weaken what we shared.',
-          description: 'Kelavomme maathugaliginta mouna jaasti maatadittu... aadre namma preethi yavaglu geddittu. 🤍 This moment reminds us that silence, misunderstanding, and gentle pauses were never strong enough to break our bond. Instead, they only made our love more resilient and deeper.'
+          description: 'Kelavomme maathugaliginta mouna jaasti maatadittu... aadre namma preethi yavaglu geddittu. 🤍 This moment reminds us that silence, misunderstanding, and gentle pauses we share only made us understand each other better. In those quiet moments, our hearts spoke louder than any words ever could. Every disagreement became a chance to hold each other tighter.',
+          image: 'photos/sanna-sanna.jpg'
         },
         'doora-idru': {
           title: '🌍 Doora Idru Hrudayagalu Onde Aagidvu',
           subtitle: 'Distance was only a road, not a wall.',
-          description: 'Madhye eshte doora idru, ninna nenapu yavaglu nanna hattira ittu. 🫶🏻 Even when miles stood between us, your memory stayed close, warm, and alive in my heart. Love proved that closeness is not measured by distance alone.'
+          description: 'Madhye eshte doora idru, ninna nenapu yavaglu nanna hattira ittu. 🫶🏻 Even when miles stood between us, your memory stayed close, warm, and alive in my heart. Love proved that it transcends geography, that a heart knows no boundaries. Every call, every message, every thought of you brought you closer than any distance could separate us. You remained my closest companion.',
+          image: 'photos/doora-idru.jpg'
         },
         'jagalagalu': {
           title: '💔 Jagalagalu Kooda Preethiya Ondu Bhaaga',
           subtitle: 'Our arguments taught us how precious peace is.',
-          description: 'Kelavu sala kopa bandru, konege "neeve nanna prapanch" anno bhaavane ella jagalagalanna mareysittu. ❤️ Sometimes we fought, but in the end, the truth of our love always softened the hurt. It reminded us that love is not only about happy moments, but also about choosing each other again.'
+          description: 'Kelavu sala kopa bandru, konege "neeve nanna prapanch" anno bhaavane ella jagalagalanna mareysittu. ❤️ Sometimes we fought, but in the end, the truth of our love always prevailed. Every argument was just a storm that strengthened the foundation of our bond. We learned that disagreement, when faced with love, becomes the greatest teacher of understanding and compromise.',
+          image: 'photos/jagalagalu.jpg'
         },
         'kaayuvudara': {
           title: '⏳ Kaayuvudara Sundara Novu',
           subtitle: 'Small gestures became the sweetest proof of love.',
-          description: 'Ninna ondu message, ondu call, athava ondu bheti ge kaadidha prathi kshana... adu preethiya nijavaada bele kalisthu. 💌 Every little message, call, or meeting became a tiny celebration of affection. Those ordinary moments carried extraordinary meaning.'
+          description: 'Ninna ondu message, ondu call, athava ondu bheti ge kaadidha prathi kshana... adu preethiya nijavaada bele kalisthu. 💌 Every little message, call, or meeting became a treasure chest of memories. You taught me that love is not always in grand gestures—it lives in the smallest moments. Your consistency, your presence, your simple acts of kindness became the most beautiful love language.',
+          image: 'photos/kaayuvudara.jpg'
         },
         'ninna-nenapalle': {
           title: '🥺 Ninna Nenapalle Badukida Dinagalu',
           subtitle: 'Even the days without you felt tender and full of longing.',
-          description: 'Ninna nodade kaleda prathi dina, ninna mele iruva preethi innu jaasti aagta hoythu. 🌹 Each day without seeing you made your love feel even stronger. The longing turned into proof that your presence had become a beautiful part of my life.'
+          description: 'Ninna nodade kaleda prathi dina, ninna mele iruva preethi innu jaasti aagta hoythu. 🌹 Each day without seeing you made your love feel even stronger. The longing turned into the sweetest ache, a reminder of how deeply you had become a part of my soul. Missing you was painful, yet it was proof that you had changed my life forever.',
+          image: 'photos/ninna-nenapalle.jpg'
         },
         'nambike': {
           title: '🤝 Nambike... Namma Dodda Shakti',
           subtitle: 'Trust became the foundation that held us steady.',
-          description: 'Paristhithigalu badaladru, janaru enu helidru... ninna mele iruva nambike yavaglu badalagilla. ✨ No matter how life changed, our trust remained unshaken. It became the quiet strength that carried us through every uncertainty.'
+          description: 'Paristhithigalu badaladru, janaru enu helidru... ninna mele iruva nambike yavaglu badalagilla. ✨ No matter how life changed, our trust remained unshaken. It became the quiet strength that kept us standing when everything else wavered. In a world of uncertainty, you were my constant, and I, yours. That trust was our greatest treasure.',
+          image: 'photos/nambike.jpg'
         },
         'thaalme': {
           title: '🌸 Thaalme... Namma Preethiya Soundarya',
           subtitle: 'We grew through patience, understanding, and grace.',
-          description: 'Aatura maadade, obbaranna obbaru artha maadkondhu, kai bidade munde nadevu. 💞 We moved forward without rushing, understanding one another with kindness and holding each other with care. Love became more beautiful because we chose to grow together gently.'
+          description: 'Aatura maadade, obbaranna obbaru artha maadkondhu, kai bidade munde nadevu. 💞 We moved forward without rushing, understanding one another with kindness and holding each other\'s hand through every season. Growth became beautiful because we experienced it together. Your patience shaped me, and my love nurtured you. We became each other\'s greatest blessing.',
+          image: 'photos/thaalme.jpg'
         },
         'prathi-kashta': {
           title: '♾️ Prathi Kashta... Namma Bandhavanna Innu Balavaagisthu',
           subtitle: 'Every challenge made our bond stronger and more lasting.',
-          description: 'Baduku kotta prathi pareekshe nammannu doora maadalilla... badalagi, innu hattira tandu, "Forever" anno nambikeyanna innu gattiyaagisthu. ❤️🌹 Each hard moment brought us closer instead of pushing us apart. It made our promise of forever feel more real, more alive, and more beautiful.'
+          description: 'Baduku kotta prathi pareekshe nammannu doora maadalilla... badalagi, innu hattira tandu, "Forever" anno nambikeyanna innu gattiyaagisthu. ❤️🌹 Each hard moment brought us closer instead of pulling us apart. We learned that true love doesn\'t run away from difficulties—it faces them together. Every challenge became a stepping stone toward a deeper, more unbreakable connection. Forever isn\'t just a promise; it\'s our reality.',
+          image: 'photos/prathi-kashta.jpg'
         }
       };
+      
       const entry = content[reason] || content['sanna-sanna'];
       const currentIndex = reasons.indexOf(reason) >= 0 ? reasons.indexOf(reason) : 0;
       const nextReason = reasons[(currentIndex + 1) % reasons.length];
@@ -182,6 +518,8 @@
       document.getElementById('title').textContent = entry.title;
       document.getElementById('subtitle').textContent = entry.subtitle;
       document.getElementById('description').textContent = entry.description;
+      document.getElementById('reasonImage').src = entry.image;
+      
       document.getElementById('nextBtn').addEventListener('click', (event) => {
         event.preventDefault();
         window.location.href = `reason-detail.html?reason=${nextReason}`;
