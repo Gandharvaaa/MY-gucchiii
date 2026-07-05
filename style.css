@@ -58,7 +58,7 @@ body {
   color: var(--text);
   font-family: 'Cormorant Garamond', serif;
   transition: background 0.45s ease, color 0.45s ease;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><path fill="%23c68f7f" d="M18 2c-3 6-8 8-8 15 0 5 4 9 8 9s8-4 8-9c0-7-5-9-8-15z"/><path fill="%23fff0f5" d="M18 8c2 3 4 5 4 8 0 2-2 4-4 4s-4-2-4-4c0-3 2-5 4-8z"/></svg>') 18 18, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><path fill="%23c68f7f" d="M18 2c-3 6-8 8-8 15 0 5 4 9 8 9s8-4 8-9c0-7-5-9-8-15z"/></svg>') 18 18, auto;
 }
 
 body::before {
@@ -66,7 +66,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.12"/></svg>');
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
   background-size: 20px 20px, cover;
   mix-blend-mode: soft-light;
 }
@@ -194,6 +194,7 @@ body::after {
   box-shadow: 0 8px 20px var(--shadow);
   color: var(--burgundy);
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .icon-btn:hover,
@@ -240,6 +241,7 @@ body::after {
   font-size: 1.5rem;
   z-index: 120;
   box-shadow: 0 10px 24px var(--shadow);
+  cursor: pointer;
 }
 
 .nav-btn.prev {
@@ -371,6 +373,7 @@ body.light .cover-slide .slide-content {
   border-radius: 999px;
   font-size: 1rem;
   box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+  cursor: pointer;
 }
 
 .glass-card {
@@ -591,6 +594,15 @@ body.light .cover-slide .slide-content {
 
 .finale-card {
   text-align: center;
+}
+
+.birthday-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 1rem 0 1.5rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
 }
 
 .final-signoff {
